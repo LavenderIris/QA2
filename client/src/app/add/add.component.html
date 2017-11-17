@@ -1,0 +1,17 @@
+
+
+
+<a [routerLink]="['/all']">Home</a>
+<a class='p-l' [routerLink]="['/logout']">Logout</a>
+<h1>New Question</h1>
+
+
+<div>
+  <form (submit) = 'onSubmit()' name='formData' #formData="ngForm">
+    Question: <input type="text" name ='q' required minlength='10' [(ngModel)]='question.question'><br>
+    Description (optional): <textarea name="d" [(ngModel)]='question.description' cols="30" rows="10"></textarea>
+    <input [disabled]='!formData.valid' type="submit" value='Enter'>
+  </form>
+</div>
+
+  <p class='red' *ngIf='!formData.valid'>Question needs to be at least 10 characters</p>

@@ -1,0 +1,30 @@
+<h1>Answer question</h1>
+
+<a [routerLink]="['/all']">Home</a>
+
+<a class='p-l'  [routerLink]="['/question', q_id]">Go back to Question</a>
+<a class='p-l' [routerLink]="['/logout']">Logout</a>
+
+<h1>
+  {{singleQuestion.question}}
+</h1>
+
+<h4>- {{singleQuestion.description}}</h4>
+
+<br>
+
+<div>
+  <form (submit) ='onSubmit()' name='formData' #formData="ngForm">
+    <label>Your Answer:  </label>
+    
+    <textarea name="answer"  [(ngModel)]='answer.answer' required 
+    minlength="5" cols="30" rows="5"></textarea> <br>
+    <label>Supporting details for your answer (optional) </label>
+    <textarea name="d" [(ngModel)]='answer.details' cols="30" rows="5"></textarea>
+    <input [disabled]='!formData.valid' type="submit" value='Enter'>
+  </form>
+</div>
+
+<p class='red' *ngIf='!formData.valid'>Answer needs to be at least 5 characters</p>
+
+

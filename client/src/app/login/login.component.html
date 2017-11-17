@@ -1,0 +1,11 @@
+<h1>
+  Q & A
+</h1>
+
+
+<div>
+  <form (submit) = 'onSubmit()' name='formData' #formData="ngForm">
+     Name: <input type="text" name ='t' [(ngModel)]='data.name'><br>
+     <input [disabled]='!formData.valid' type="submit" value='Enter'>
+   </form>
+ </div>

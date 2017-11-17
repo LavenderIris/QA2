@@ -1,0 +1,7 @@
+table, tr, td {
+    border: 1px solid black;
+}
+
+.p-l {
+    margin-left: 100px;
+}

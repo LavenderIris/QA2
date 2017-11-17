@@ -1,0 +1,34 @@
+<a [routerLink]="['/all']">Home</a>
+
+{{q_id}}
+<a class='p-l'  [routerLink]="['/question', q_id,'new_answer']">Answer question</a>
+<a class='p-l' [routerLink]="['/logout']">Logout</a>
+
+<h1>
+  {{singleQuestion.question}}
+</h1>
+
+<h3>{{singleQuestion.description}}</h3>
+
+<b>Answers</b>
+
+
+<!-- {{answers.questions | json}} -->
+
+
+
+  <div *ngFor= 'let q of all_answers ; let idx = index '>
+      <p>{{q.author}} {{q.answer}} </p>
+      <p>{{q.details}}</p>
+      <p>likes: {{q.likes}}  <button (click)='addLike(q._id)'>Like</button> </p>
+     
+      <br>
+  
+</div>
+
+
+{{all_answers | json}}
+
+
+<!-- {{questions | json}} -->
+
